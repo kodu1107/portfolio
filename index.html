@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f7f9" />
+    <meta name="description" content="Radar, Embedded, RTOS, FPGA 경험을 갖춘 임베디드 시스템 개발자 취업 포트폴리오" />
+    <title>Embedded System Developer | Portfolio</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#main">본문으로 바로가기</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="포트폴리오 첫 화면으로 이동">
+        <span class="brand-mark" aria-hidden="true">P</span>
+        <span>PORTFOLIO</span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">메뉴 열기</span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="주요 메뉴">
+        <a href="#profile">Profile</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero section-shell" aria-labelledby="hero-title">
+        <div class="hero-main reveal">
+          <p class="eyebrow"><span></span> EMBEDDED SOFTWARE ENGINEER</p>
+          <h1 id="hero-title">하드웨어를 이해하고<br /><em>신호를 코드로 연결하는</em><br />개발자입니다.</h1>
+          <p class="hero-description">
+            Radar / RF / Signal Processing 경험을 기반으로 STM32와 FreeRTOS까지 확장하며 방산 임베디드 시스템 엔지니어를 준비하고 있습니다.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">대표 프로젝트 보기</a>
+            <a class="button" href="https://github.com/kodu1107" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a class="button button-text" href="mailto:00mkr@naver.com">00mkr@naver.com</a>
+          </div>
+        </div>
+
+        <aside class="job-card reveal" aria-label="지원 분야 및 핵심 이력">
+          <p class="card-label">TARGET POSITION</p>
+          <h2>Embedded<br />System Engineer</h2>
+          <dl>
+            <div><dt>Focus</dt><dd>Radar · Embedded</dd></div>
+            <div><dt>Education</dt><dd>Konkuk University, B.S.</dd></div>
+            <div><dt>Training</dt><dd>LIG the Ssen 4th</dd></div>
+            <div><dt>Research</dt><dd>KCI Paper · Conference</dd></div>
+          </dl>
+          <p class="card-status"><span></span> Open to opportunities</p>
+        </aside>
+      </section>
+
+      <section class="quick-facts" aria-label="핵심 이력 요약">
+        <div class="section-shell facts-grid">
+          <div><strong>7+</strong><span>Engineering Projects</span></div>
+          <div><strong>1</strong><span>KCI Journal Paper</span></div>
+          <div><strong>HW → SW</strong><span>End-to-end Experience</span></div>
+          <div><strong>Current</strong><span>LIG Embedded School</span></div>
+        </div>
+      </section>
+
+      <section class="section-shell section-block" id="profile" aria-labelledby="profile-title">
+        <header class="section-header reveal">
+          <p>01 / PROFILE</p>
+          <h2 id="profile-title">저를 설명하는<br />네 가지 역량</h2>
+        </header>
+        <div class="competency-grid">
+          <article class="competency-card reveal">
+            <span>01</span><h3>Hardware-aware</h3>
+            <p>RF 회로, 안테나, ADC 데이터가 소프트웨어 입력으로 이어지는 과정을 이해합니다.</p>
+          </article>
+          <article class="competency-card reveal">
+            <span>02</span><h3>Real-time Embedded</h3>
+            <p>STM32 Peripheral, DMA, Interrupt, FreeRTOS Task 기반의 시스템을 구현합니다.</p>
+          </article>
+          <article class="competency-card reveal">
+            <span>03</span><h3>Signal to Algorithm</h3>
+            <p>FMCW Raw Data에서 FFT, 특징 분석, 분류와 추적까지 알고리즘을 구성합니다.</p>
+          </article>
+          <article class="competency-card reveal">
+            <span>04</span><h3>System Integration</h3>
+            <p>MCU, RTOS, Network, Signal Processing을 연결해 시스템 관점에서 문제를 해결합니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell section-block projects" id="projects" aria-labelledby="projects-title">
+        <header class="section-header reveal">
+          <p>02 / SELECTED PROJECTS</p>
+          <h2 id="projects-title">직무 역량을 보여주는<br />대표 프로젝트</h2>
+          <p class="section-description">무엇을 만들었는지보다 어떤 문제를 맡고 어떻게 해결했는지를 중심으로 정리했습니다.</p>
+        </header>
+
+        <div class="case-list">
+          <article class="case-study reveal">
+            <header class="case-heading">
+              <div><span class="case-index">PROJECT 01</span><h3>FMCW Radar Object<br />Classification & Tracking</h3></div>
+              <div class="tag-list"><span>FMCW</span><span>AWR1843</span><span>DCA1000</span><span>MATLAB</span></div>
+            </header>
+            <div class="case-body">
+              <div class="case-summary">
+                <p class="case-label">GOAL</p>
+                <p>Radar Raw Data로 차량과 보행자를 식별하고 접근 차량을 안정적으로 추적하는 알고리즘 개발</p>
+              </div>
+              <dl class="case-details">
+                <div><dt>담당</dt><dd>ADC / IQ Raw Data 수집부터 신호처리, 객체 검증 및 추적 알고리즘 구현</dd></div>
+                <div><dt>해결</dt><dd>EMA Background 제거와 Zero Doppler 제거로 정적 성분을 억제하고 PSD 특성으로 객체를 구분</dd></div>
+                <div><dt>기술</dt><dd>Range / Doppler FFT · Connected Component · Frame Validation · Kalman Filter</dd></div>
+                <div class="result"><dt>결과</dt><dd>연구를 발전시켜 한국전자파학회 논문지(KCI) 논문 작성 및 학술대회 발표</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="case-study reveal">
+            <header class="case-heading">
+              <div><span class="case-index">PROJECT 02</span><h3>5.8 GHz Non-contact<br />Vital Signal Radar</h3></div>
+              <div class="tag-list"><span>ADS</span><span>STM32G474</span><span>ADC / DMA</span><span>MATLAB</span></div>
+            </header>
+            <div class="case-body">
+              <div class="case-summary">
+                <p class="case-label">GOAL</p>
+                <p>사람의 미세 움직임을 감지하여 비접촉 방식으로 신체 신호를 측정하는 Radar Sensing System 제작</p>
+              </div>
+              <dl class="case-details">
+                <div><dt>담당</dt><dd>Radar Sensor Board와 Antenna 설계, STM32 데이터 수집, MATLAB 신호 분석</dd></div>
+                <div><dt>해결</dt><dd>ADC Dual Mode와 Timer / DMA로 I/Q 신호를 수집하고 UART로 PC에 실시간 전달</dd></div>
+                <div><dt>기술</dt><dd>5.8 GHz RF · 50Ω Transmission Line · I/Q Sampling · FFT</dd></div>
+                <div class="result"><dt>결과</dt><dd>RF Hardware부터 Data Acquisition, Signal Processing까지 End-to-end 시스템 구현</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="case-study reveal">
+            <header class="case-heading">
+              <div><span class="case-index">PROJECT 03</span><h3>STM32 TouchGFX<br />Door Lock</h3></div>
+              <div class="tag-list"><span>STM32F429</span><span>FreeRTOS</span><span>TouchGFX</span><span>PWM</span></div>
+            </header>
+            <div class="case-body">
+              <div class="case-summary">
+                <p class="case-label">GOAL</p>
+                <p>Touch LCD에서 비밀번호를 입력하고 인증 결과에 따라 Servo Motor를 제어하는 임베디드 도어락 구현</p>
+              </div>
+              <dl class="case-details">
+                <div><dt>담당</dt><dd>TouchGFX GUI, 입력 처리, 비밀번호 인증, Servo Motor 제어</dd></div>
+                <div><dt>해결</dt><dd>GUI 입력과 제어 로직을 Task 기반으로 분리해 시스템 동작 구조화</dd></div>
+                <div><dt>기술</dt><dd>CMSIS-RTOS · Task · Touch Input · PWM Servo Control</dd></div>
+                <div class="result"><dt>결과</dt><dd>사용자 입력부터 인증 및 액추에이터 제어까지 동작하는 임베디드 시스템 완성</dd></div>
+              </dl>
+            </div>
+          </article>
+        </div>
+
+        <div class="other-work reveal">
+          <div class="other-title"><p>OTHER PROJECTS</p><h3>추가 프로젝트</h3></div>
+          <ul>
+            <li><span>04</span><strong>5.8 GHz Microstrip Patch Antenna</strong><em>ADS · EM Simulation · PCB</em></li>
+            <li><span>05</span><strong>Real-time TCP Drawing Quiz</strong><em>WPF · TCP/IP · InkCanvas</em></li>
+            <li><span>06</span><strong>Raspberry Pi Sensor Monitoring</strong><em>Arduino · Serial · REST API</em></li>
+            <li><span>07</span><strong>AI Automatic Recycling System</strong><em>Classification · Arduino · Servo</em></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section-shell section-block" id="experience" aria-labelledby="experience-title">
+        <header class="section-header reveal">
+          <p>03 / EXPERIENCE</p>
+          <h2 id="experience-title">교육 및 연구 경험</h2>
+        </header>
+        <div class="career-layout">
+          <div class="timeline reveal">
+            <article>
+              <div class="timeline-meta"><span>NOW</span><em>TRAINING</em></div>
+              <div><h3>LIG the Ssen Embedded School 4th</h3><p>STM32 Peripheral 제어, FreeRTOS, Network Programming 중심의 임베디드 시스템 실습</p></div>
+            </article>
+            <article>
+              <div class="timeline-meta"><span>RESEARCH</span><em>RADAR</em></div>
+              <div><h3>FMCW Radar Safety System</h3><p>보행자 안전을 위한 접근 차량 식별 및 정밀 객체 탐지 알고리즘 연구</p></div>
+            </article>
+            <article>
+              <div class="timeline-meta"><span>B.S.</span><em>EDUCATION</em></div>
+              <div><h3>Konkuk University</h3><p>Electrical & Electronics Engineering</p></div>
+            </article>
+          </div>
+
+          <aside class="publication-card reveal">
+            <p class="card-label">PUBLICATIONS & CONFERENCES</p>
+            <article><span>JOURNAL / KCI</span><h3>보행자 안전을 위한 FMCW 레이더 기반 접근 차량 식별 시스템</h3><p>한국전자파학회 논문지</p></article>
+            <article><span>CONFERENCE</span><h3>보행자 안전 시스템을 위한 FMCW 레이더 기반 정밀 객체 탐지 기법</h3><p>한국전자파학회</p></article>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section-shell section-block" id="skills" aria-labelledby="skills-title">
+        <header class="section-header reveal">
+          <p>04 / SKILLS</p>
+          <h2 id="skills-title">직무 기술</h2>
+        </header>
+        <div class="skill-groups">
+          <article class="reveal"><h3>Languages</h3><p>C · C++ · MATLAB</p><span>Algorithm · Data Processing · Embedded Programming</span></article>
+          <article class="reveal"><h3>Embedded</h3><p>STM32 · FreeRTOS · Raspberry Pi · Arduino</p><span>GPIO · UART · ADC · DMA · Interrupt · PWM</span></article>
+          <article class="reveal"><h3>Radar / RF</h3><p>FMCW · FFT · Kalman · ADS</p><span>Raw Data · I/Q · Detection · Classification · Tracking</span></article>
+        </div>
+      </section>
+
+      <section class="contact section-shell" id="contact" aria-labelledby="contact-title">
+        <p class="section-kicker reveal">05 / CONTACT</p>
+        <h2 id="contact-title" class="reveal">함께 성장할 기회를<br />기다리고 있습니다.</h2>
+        <p class="contact-copy reveal">Radar와 Embedded Software를 연결하는 엔지니어가 필요하다면 연락해 주세요.</p>
+        <div class="contact-links reveal">
+          <a href="mailto:00mkr@naver.com"><span>Email</span>00mkr@naver.com ↗</a>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Embedded System Developer</p>
+      <a href="#top" data-back-to-top>Back to top ↑</a>
+    </footer>
+  </body>
+</html>
