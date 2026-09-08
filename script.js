@@ -1,70 +1,12 @@
-const menuButton = document.querySelector('.menu-button');
-const navigation = document.querySelector('.site-nav');
-
-menuButton?.addEventListener('click', () => {
-  const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
-  menuButton.setAttribute('aria-expanded', String(!isOpen));
-  menuButton.querySelector('.sr-only').textContent = isOpen ? '메뉴 열기' : '메뉴 닫기';
-  navigation?.classList.toggle('is-open', !isOpen);
-});
-
-navigation?.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => {
-    menuButton?.setAttribute('aria-expanded', 'false');
-    menuButton.querySelector('.sr-only').textContent = '메뉴 열기';
-    navigation.classList.remove('is-open');
-  });
-});
-
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && navigation?.classList.contains('is-open')) {
-    menuButton?.setAttribute('aria-expanded', 'false');
-    menuButton.querySelector('.sr-only').textContent = '메뉴 열기';
-    navigation.classList.remove('is-open');
-    menuButton?.focus();
-  }
-});
-
-if ('IntersectionObserver' in window) {
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12 }
-  );
-
-  document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
-
-  const navObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        navigation?.querySelectorAll('a').forEach((link) => {
-          link.classList.toggle('is-active', link.getAttribute('href') === `#${entry.target.id}`);
-        });
-      });
-    },
-    { rootMargin: '-35% 0px -55%', threshold: 0 }
-  );
-
-  document.querySelectorAll('section[id]').forEach((section) => navObserver.observe(section));
-} else {
-  document.querySelectorAll('.reveal').forEach((element) => element.classList.add('is-visible'));
-}
-
-const year = document.querySelector('#year');
-if (year) year.textContent = new Date().getFullYear();
-
-document.querySelector('[data-back-to-top]')?.addEventListener('click', (event) => {
-  event.preventDefault();
-  window.scrollTo({
-    top: 0,
-    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
-  });
-  window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}#top`);
-});
+(() => {
+const header=document.querySelector('body>header'),button=document.querySelector('.menu-button'),nav=document.querySelector('nav'),links=[...nav.querySelectorAll('a')];
+const setMenu=open=>{button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-label',open?'메뉴 닫기':'메뉴 열기');nav.classList.toggle('open',open);};
+button.addEventListener('click',()=>setMenu(button.getAttribute('aria-expanded')!=='true'));
+links.forEach(link=>link.addEventListener('click',()=>setMenu(false)));
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&button.getAttribute('aria-expanded')==='true'){setMenu(false);button.focus();}});
+document.addEventListener('click',event=>{if(!header.contains(event.target))setMenu(false);});
+window.matchMedia('(max-width:600px)').addEventListener('change',()=>setMenu(false));
+const sections=links.map(link=>document.querySelector(link.getAttribute('href'))).filter(Boolean);let ticking=false;
+const update=()=>{document.body.classList.toggle('scrolled',window.scrollY>30);let current=sections[0];sections.forEach(section=>{if(section.getBoundingClientRect().top<=180)current=section;});links.forEach(link=>{const active=link.getAttribute('href')===`#${current.id}`;link.classList.toggle('active',active);if(active)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});ticking=false;};
+window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(update);ticking=true;}},{passive:true});window.addEventListener('resize',update,{passive:true});document.querySelector('#year').textContent=new Date().getFullYear();setMenu(false);update();
+})();
