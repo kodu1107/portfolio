@@ -1,3 +1,33 @@
-# Embedded & Radar System Developer Portfolio
+# 문경록 · Signal Console Portfolio
 
-Radar, Embedded, RTOS, FPGA, Signal Processing 경험을 소개하는 모바일 반응형 포트폴리오입니다.
+방산·임베디드 직무를 위한 정적 포트폴리오. HTML/CSS/JavaScript만 사용하며 별도 빌드가 필요하지 않습니다.
+
+## 미리보기
+
+이 폴더에서 `python -m http.server 8765` 실행 후 http://localhost:8765 에 접속합니다. GitHub Pages는 저장소 루트에서 서비스할 수 있습니다.
+
+## 콘텐츠 구성
+
+1. FMCW 종합설계: 센서 데이터 취득, FFT, PSD 분류, 추적 및 접근 경고
+2. 안테나 설계: DGS 설계, 실측과 시뮬레이션 차이 분석
+3. 심화설계: STM 신호처리, 안테나 설계, 회로 검증
+4. 논문: 종합설계를 발전시킨 연구 성과. 독립된 신규 시스템으로 중복 계산하지 않음
+5. AI 분리배출: 데이터셋과 서보 제어, 실제 시제품
+
+## 자료와 표현 기준
+
+- 자료 출처: 사용자 제공 프로젝트별 보고서, PPT, 사진, 코드. 자소서 원본은 변경하지 않음.
+- 심화설계 개인 역할은 최종보고서 21쪽 역할표를 우선함. Radar Sensor Board 설계와 MATLAB 코드는 팀원의 역할로 표기되어 있음.
+- 안테나 5.79 GHz / 230 MHz / 8.057 dBi는 시뮬레이션 결과. 6.28 GHz / 290 MHz는 실측 결과. 6.25 GHz / 300 MHz / 8.415 dBi는 공정 오차 및 계산 설정을 반영한 재시뮬레이션 결과. 목표 주파수 복구나 실측 이득으로 표현하지 않음.
+- 98.03%와 5.88%는 논문에서 보고한 평균 정확도 및 FDR. 초기 포스터의 94.3% / 2.6%와 혼합하지 않음.
+- 코드 파라미터와 초안 파라미터가 달라 웹에는 버전별 임계값을 나열하지 않음. MCU에서 레이더 알고리즘 실행 완료 또는 연산량 벤치마크를 주장하지 않음.
+- assets/radar.jpg: 논문 초안의 실제 도로 측정 장면.
+- assets/radar-raw.jpg, radar-tracked.jpg, research.jpg: 논문 초안에서 추출한 RDM 및 Kalman 비교 그림. 각 그림의 서로 다른 실험 조건을 고려해야 하며 같은 프레임의 전후 결과로 해석하지 않음.
+- assets/antenna.jpg: 사용자 제공 안테나 실물 사진.
+- assets/antenna-results.jpg: 안테나 최종 발표자료의 시뮬레이션·실측 비교 그림.
+- assets/radar-signal.jpg: 심화설계 오실로스코프 측정 사진.
+- assets/recycling.jpg, recycling-demo.jpg: AI 분리배출 시제품 사진.
+
+이력서 파일이 제공되지 않아 다운로드 버튼을 만들지 않았습니다.
+
+프로필 카드: 사용자 제공 `일단자소서.pdf`의 사진, 학력, 주저자 실적, OPIc IH를 반영. 사진은 문서 첫 페이지에서 추출했으며 주소·전화번호·생년월일 등은 포함하지 않음.
